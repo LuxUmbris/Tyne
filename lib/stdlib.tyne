@@ -1,0 +1,70 @@
+# Tyne Standard Library
+# Main stdlib file that imports all modules
+
+import "io";
+import "math";
+import "string";
+import "list";
+import "hash";
+import "crypto";
+import "filesystem";
+
+# Common types and utilities
+class Optional<T> {
+    T value;
+    bool hasValue;
+
+    void Optional() {
+        hasValue = false;
+    }
+
+    void Optional(T val) {
+        value = val;
+        hasValue = true;
+    }
+}
+
+class Result<T, E> {
+    T value;
+    E error;
+    bool isOk;
+
+    void Result(T val) {
+        value = val;
+        isOk = true;
+    }
+
+    void Result(E err) {
+        error = err;
+        isOk = false;
+    }
+}
+
+# Utility functions
+function range(start int32, end int32) {
+    list result = []
+    int32 i = start
+    while (i < end) {
+        listAppend(result, i)
+        i = i + 1
+    }
+    return result
+}
+
+function map(list, func) {
+    list result = []
+    for (item in list) {
+        listAppend(result, func(item))
+    }
+    return result
+}
+
+function filter(list, predicate) {
+    list result = []
+    for (item in list) {
+        if (predicate(item)) {
+            listAppend(result, item)
+        }
+    }
+    return result
+}

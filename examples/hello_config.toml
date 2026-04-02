@@ -1,0 +1,20 @@
+# Tyne Compiler Configuration for Hello World (demo)
+
+[source]
+file = "hello_world.tyne"
+
+[output]
+file = "hello_world.tynebin"
+
+[target]
+arch = "x86_64"
+
+[optimization]
+enabled = false
+level = 0
+
+[debug]
+symbols = true
+
+[entry]
+point = "entry"

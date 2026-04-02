@@ -1,0 +1,42 @@
+# Math Module
+# Provides mathematical functions
+
+int32 abs(x) {
+    # Absolute value
+    return 0;
+}
+
+double sqrt(double x) {
+    # Square root
+    return 0.0;
+}
+
+double pow(double base, double exp) {
+    # Power function
+    return 0.0;
+}
+
+double sin(double x) {
+    # Sine function
+    return 0.0;
+}
+
+double cos(double x) {
+    # Cosine function
+    return 0.0;
+}
+
+double tan(double x) {
+    # Tangent function
+    return 0.0;
+}
+
+double random() {
+    # Random number between 0 and 1
+    return 0.0;
+}
+
+int32 random(int32 max) {
+    # Random integer between 0 and max-1
+    return 0;
+}

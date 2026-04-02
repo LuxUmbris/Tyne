@@ -1,0 +1,27 @@
+# IO Module
+# Provides input/output operations
+
+int32 print(...) {
+    # Print arguments without newline
+    return 0;
+}
+
+int32 println(...) {
+    # Print arguments with newline
+    return 0;
+}
+
+string readln() {
+    # Read line from stdin
+    return "";
+}
+
+string readFile(string filename) {
+    # Read entire file as string
+    return "";
+}
+
+int32 writeFile(string filename, content) {
+    # Write content to file
+    return 0;
+}

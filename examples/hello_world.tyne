@@ -1,0 +1,17 @@
+# Hello World in Tyne
+# A simple program that demonstrates basic Tyne syntax
+
+import io;
+
+entry {
+    println("Hello, World!");
+    print("Welcome to Tyne programming language!");
+    println("");
+
+    # Demonstrate some basic operations
+    int32 answer = 42;
+    print("The answer is: ");
+    println(answer);
+
+    return 0;
+}

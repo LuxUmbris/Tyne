@@ -1,0 +1,91 @@
+# Collections Module
+# Advanced data structures
+
+class HashMap<K, V> {
+    # Hash map implementation
+    void put(K key, V value) {
+        # Insert key-value pair
+    }
+
+    V get(K key) {
+        # Get value by key
+        return null;
+    }
+
+    bool contains(K key) {
+        # Check if key exists
+        return false;
+    }
+
+    void remove(K key) {
+        # Remove key-value pair
+    }
+
+    int32 size() {
+        # Get number of elements
+        return 0;
+    }
+}
+
+class HashSet<T> {
+    # Hash set implementation
+    void add(T value) {
+        # Add value to set
+    }
+
+    bool contains(T value) {
+        # Check if value exists
+        return false;
+    }
+
+    void remove(T value) {
+        # Remove value from set
+    }
+
+    int32 size() {
+        # Get number of elements
+        return 0;
+    }
+}
+
+class Queue<T> {
+    # Queue implementation (FIFO)
+    function enqueue(value T) {
+        # Add to back
+    }
+
+    function dequeue() {
+        # Remove from front
+        return null
+    }
+
+    function peek() {
+        # Look at front without removing
+        return null
+    }
+
+    function size() {
+        return 0
+    }
+}
+
+class Stack<T> {
+    # Stack implementation (LIFO)
+    function push(value T) {
+        # Add to top
+    }
+
+    function pop() {
+        # Remove from top
+        return null
+    }
+
+    function peek() {
+        # Look at top without removing
+        return null
+    }
+
+    function size() {
+        return 0
+    }
+}

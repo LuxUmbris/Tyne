@@ -1,0 +1,12 @@
+# Crypto Module
+# Provides cryptographic functions
+
+string aesEncrypt(string plaintext, string key) {
+    # AES encryption
+    return "";
+}
+
+string aesDecrypt(string ciphertext, string key) {
+    # AES decryption
+    return "";
+}

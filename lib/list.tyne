@@ -1,0 +1,41 @@
+# List Module
+# Provides list manipulation functions
+
+any listGet(list, int32 index) {
+    # Get element at index
+    return null;
+}
+
+int32 listSet(list, int32 index, value) {
+    # Set element at index
+    return 0;
+}
+
+int32 listAppend(list, value) {
+    # Append value to list
+    return 0;
+}
+
+int32 listInsert(list, int32 index, value) {
+    # Insert value at index
+    return 0;
+}
+
+int32 listRemove(list, int32 index) {
+    # Remove element at index
+    return 0;
+}
+
+int32 listFind(list, value) {
+    # Find index of value in list
+    return -1;
+}
+
+function listSort(list) {
+    # Sort list in place
+    return 0
+}
+
+# Example of complex list syntax:
+# list mixed = [int32 5, string "hello", list [int32 1, int32 2]]
+# list typed = [int32:string 3:"abc"]  # 3 copies of "abc"

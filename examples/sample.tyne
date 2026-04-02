@@ -1,0 +1,41 @@
+# Sample Tyne Program
+# This demonstrates the Tyne language features
+
+import io;
+import math;
+
+int32 factorial(int32 n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+entry {
+    println("Hello, Tyne!");
+
+    int32 num = 5;
+    int32 result = factorial(num);
+
+    print("Factorial of ");
+    print(num);
+    print(" is ");
+    println(result);
+
+    # Test complex list syntax
+    list mixed = [int32 42, string "hello", list [int32 1, int32 2, int32 3]];
+    list repeated = [int32:string 3:"abc"];
+
+    print("Mixed list length: ");
+    println(length(mixed));
+
+    print("Repeated list: ");
+    println(repeated);
+
+    # Test math functions
+    double sqrt_result = sqrt(16.0);
+    print("Square root of 16: ");
+    println(sqrt_result);
+
+    return 0;
+}

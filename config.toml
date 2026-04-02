@@ -1,0 +1,27 @@
+# Tyne Compiler Configuration
+# This file configures how Tyne compiles your source code
+
+[output]
+file = "program.tynebin"  # Output binary file
+
+[target]
+arch = "x86_64"  # Target architecture: x86_64, arm32, arm64, riscv64
+
+[optimization]
+enabled = true
+level = 2  # 0=none, 1=basic, 2=aggressive
+
+[includes]
+# Additional include paths for imported modules
+# paths = ["/usr/local/lib/tyne", "./lib"]
+
+[defines]
+# Preprocessor-style defines
+# VERSION = "1.0"
+# DEBUG = "true"
+
+[debug]
+symbols = false  # Include debug symbols
+
+[entry]
+point = "entry"  # Entry point function name

@@ -1,0 +1,42 @@
+# String Module
+# Provides string manipulation functions
+
+int32 length(s) {
+    # Get string or list length
+    return 0;
+}
+
+string substring(string s, int32 start) {
+    # Get substring from start to end
+    return "";
+}
+
+string substring(string s, int32 start, int32 len) {
+    # Get substring with specified length
+    return "";
+}
+
+string concat(...) {
+    # Concatenate all arguments as strings
+    return "";
+}
+
+list split(string s, string delim) {
+    # Split string by delimiter
+    return [];
+}
+
+string toString(x) {
+    # Convert value to string
+    return "";
+}
+
+function parseInt(s string) {
+    # Parse string to integer
+    return 0
+}
+
+function parseDouble(s string) {
+    # Parse string to double
+    return 0.0
+}

@@ -1,0 +1,68 @@
+name: Build Toolchain
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # Wir nutzen spezifischere Namen für die Artefakte
+        include:
+          - os: ubuntu-latest
+            artifact_name: tyne-linux
+            binary_path: build/tyne
+          - os: windows-latest
+            artifact_name: tyne-windows
+            binary_path: build/tyne.exe
+          - os: macos-latest
+            artifact_name: tyne-macos
+            binary_path: build/tyne
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # --- OS Spezifische Installationen ---
+      - name: Install GCC (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Install GCC (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install mingw --no-progress -y
+          echo "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" >> $GITHUB_PATH
+
+      - name: Install GCC (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install gcc
+          echo "CC=gcc-13" >> $GITHUB_ENV
+          echo "CXX=g++-13" >> $GITHUB_ENV
+
+      # --- Build Prozess ---
+      - name: Run Build Toolchain Script
+        run: python build_toolchain.py
+
+      # --- Gezielter Artifact Upload ---
+      - name: Upload Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.binary_path }}
+          if-no-files-found: error # Hilft beim Debuggen, falls das Skript woanders speichert
