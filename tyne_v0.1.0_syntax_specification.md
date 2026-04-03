@@ -41,6 +41,8 @@ Built‑in types:
     uint128
     float
     double
+    string
+    bool
     list
 
 Examples:
